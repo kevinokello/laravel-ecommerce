@@ -68,7 +68,7 @@
                   <div class="product-cart-wrap mb-30">
                     <div class="product-img-action-wrap">
                       <div class="product-img product-img-zoom">
-                        <a href="product-details.html">
+                        <a href="{{ route('product.details',['slug'=>$product->slug]) }}">
                           <img
                             class="default-img"
                             src="{{ asset('assets/imgs/shop/product-')}}{{ $product->id }}-1.jpg"
@@ -114,7 +114,7 @@
                         <a href="shop.html">Music</a>
                       </div>
                       <h2>
-                        <a href="product-details.html"
+                        <a href="{{ route('product.details',['slug'=>$product->slug]) }}"
                           >{{ $product->name }}</a
                         >
                       </h2>
@@ -302,7 +302,7 @@
                     <img src="assets/imgs/shop/thumbnail-3.jpg" alt="#" />
                   </div>
                   <div class="content pt-10">
-                    <h5><a href="product-details.html">Chen Cardigan</a></h5>
+                    <h5><a href="{{ route('product.details',['slug'=>$product->slug]) }}">Chen Cardigan</a></h5>
                     <p class="price mb-0 mt-5">$99.50</p>
                     <div class="product-rate">
                       <div class="product-rating" style="width: 90%"></div>
@@ -314,7 +314,7 @@
                     <img src="assets/imgs/shop/thumbnail-4.jpg" alt="#" />
                   </div>
                   <div class="content pt-10">
-                    <h6><a href="product-details.html">Chen Sweater</a></h6>
+                    <h6><a href="{{ route('product.details',['slug'=>$product->slug]) }}">Chen Sweater</a></h6>
                     <p class="price mb-0 mt-5">$89.50</p>
                     <div class="product-rate">
                       <div class="product-rating" style="width: 80%"></div>
@@ -326,7 +326,7 @@
                     <img src="assets/imgs/shop/thumbnail-5.jpg" alt="#" />
                   </div>
                   <div class="content pt-10">
-                    <h6><a href="product-details.html">Colorful Jacket</a></h6>
+                    <h6><a href="{{ route('product.details',['slug'=>$product->slug]) }}">Colorful Jacket</a></h6>
                     <p class="price mb-0 mt-5">$25</p>
                     <div class="product-rate">
                       <div class="product-rating" style="width: 60%"></div>
