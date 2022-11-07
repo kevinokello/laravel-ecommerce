@@ -377,8 +377,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.html">Blog </a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                             
                                     <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                         <ul class="sub-menu">
                                             <li><a href="#">Dashboard</a></li>
