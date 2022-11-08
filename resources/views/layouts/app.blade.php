@@ -14,6 +14,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.ico">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+        <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     @livewireStyles
 </head>
 
@@ -23,21 +28,8 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-4">
-                        <div class="header-info">
-                            <ul>
-                                <li>
-                                    <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i>
-                                        English <i class="fi-rs-angle-small-down"></i></a>
-                                    <ul class="language-dropdown">
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-fr.png"
-                                                    alt="">Français</a></li>
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-dt.png"
-                                                    alt="">Deutsch</a></li>
-                                        <li><a href="#"><img src="assets/imgs/theme/flag-ru.png"
-                                                    alt="">Pусский</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                     <div class="header-info">
+
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-4">
@@ -52,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4">
+                    {{-- <div class="col-xl-3 col-lg-4">
                         <div class="header-info header-info-right">
                             <ul>
                                 @auth
@@ -65,13 +57,11 @@
                                 @else
                                     <li><i class="fi-rs-key"></i><a href="{{ route('login') }}">Log In </a> / <a
                                             href="{{ route('register') }}">Sign Up</a></li>
-
-
                                     @endif
 
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -85,7 +75,9 @@
                             <div class="search-style-1">
                                 <form action="#">
                                     <input type="text" placeholder="Search for items...">
+                                    
                                 </form>
+
                             </div>
                             <div class="header-action-right">
                                 <div class="header-action-2">
@@ -96,7 +88,20 @@
                                             <span class="pro-count blue">4</span>
                                         </a>
                                     </div>
-                                   @livewire('cart-icon-component')
+                                        @livewire('cart-icon-component')
+                                        @auth
+
+                                        @else
+
+                                        @endif
+                                           <a href="{{ route('login') }}" class="btn"> Log In</a>
+                                      <div class="header-action-icon-2">
+ {{-- <a href="{{ route('login') }}">
+                                            <img class="svgInject" alt="Surfside Media"
+                                                src="assets/imgs/theme/icons/usr.svg">
+                                        </a> --}}
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -365,68 +370,8 @@
                             <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
                                 <nav>
                                     <ul>
-                                        <li><a class="active" href="/">Home </a></li>
-                                        <li><a href="{{ route('shop') }}">Shop</a></li>
-                                        <li class="position-static"><a href="#">Our Collections <i
-                                                    class="fi-rs-angle-down"></i></a>
-                                            <ul class="mega-menu">
-                                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                    <a class="menu-title" href="#">Women's Fashion</a>
-                                                    <ul>
-                                                        <li><a href="product-details.html">Dresses</a></li>
-                                                        <li><a href="product-details.html">Blouses & Shirts</a></li>
-                                                        <li><a href="product-details.html">Hoodies & Sweatshirts</a></li>
-                                                        <li><a href="product-details.html">Wedding Dresses</a></li>
-                                                        <li><a href="product-details.html">Prom Dresses</a></li>
-                                                        <li><a href="product-details.html">Cosplay Costumes</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                    <a class="menu-title" href="#">Men's Fashion</a>
-                                                    <ul>
-                                                        <li><a href="product-details.html">Jackets</a></li>
-                                                        <li><a href="product-details.html">Casual Faux Leather</a></li>
-                                                        <li><a href="product-details.html">Genuine Leather</a></li>
-                                                        <li><a href="product-details.html">Casual Pants</a></li>
-                                                        <li><a href="product-details.html">Sweatpants</a></li>
-                                                        <li><a href="product-details.html">Harem Pants</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                    <a class="menu-title" href="#">Technology</a>
-                                                    <ul>
-                                                        <li><a href="product-details.html">Gaming Laptops</a></li>
-                                                        <li><a href="product-details.html">Ultraslim Laptops</a></li>
-                                                        <li><a href="product-details.html">Tablets</a></li>
-                                                        <li><a href="product-details.html">Laptop Accessories</a></li>
-                                                        <li><a href="product-details.html">Tablet Accessories</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="sub-mega-menu sub-mega-menu-width-34">
-                                                    <div class="menu-banner-wrap">
-                                                        <a href="product-details.html"><img
-                                                                src="assets/imgs/banner/menu-banner.jpg"
-                                                                alt="Surfside Media"></a>
-                                                        <div class="menu-banner-content">
-                                                            <h4>Hot deals</h4>
-                                                            <h3>Don't miss<br> Trending</h3>
-                                                            <div class="menu-banner-price">
-                                                                <span class="new-price text-success">Save to 50%</span>
-                                                            </div>
-                                                            <div class="menu-banner-btn">
-                                                                <a href="product-details.html">Shop now</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="menu-banner-discount">
-                                                            <h3>
-                                                                <span>35%</span>
-                                                                off
-                                                            </h3>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                        <li><a class="active" href="{{ route('shop') }}">Shop</a></li>
+
 
                                         <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
                                             @auth
@@ -566,8 +511,6 @@
                             <nav>
                                 <ul class="mobile-menu">
                                     <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                            href="index.html">Home</a></li>
-                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a
                                             href="shop.html">shop</a></li>
                                     <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Our
                                             Collections</a>
@@ -643,32 +586,7 @@
             </div>
             {{ $slot }}
             <footer class="main">
-                <section class="newsletter p-30 text-white wow fadeIn animated">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-7 mb-md-3 mb-lg-0">
-                                <div class="row align-items-center">
-                                    <div class="col flex-horizontal-center">
-                                        <img class="icon-email" src="assets/imgs/theme/icons/icon-email.svg" alt="">
-                                        <h4 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h4>
-                                    </div>
-                                    <div class="col my-4 my-md-0 des">
-                                        <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first
-                                                shopping.</strong></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <!-- Subscribe Form -->
-                                <form class="form-subcriber d-flex wow fadeIn animated">
-                                    <input type="email" class="form-control bg-white font-small"
-                                        placeholder="Enter your email">
-                                    <button class="btn bg-dark text-white" type="submit">Subscribe</button>
-                                </form>
-                                <!-- End Subscribe Form -->
-                            </div>
-                        </div>
-                    </div>
+
                 </section>
                 <section class="section-padding footer-mid">
                     <div class="container pt-15 pb-20">

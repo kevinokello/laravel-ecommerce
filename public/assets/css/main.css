@@ -1624,15 +1624,15 @@ label {
 }
 
 .hero-slider-1 {
-  height: 500px;
+  height: 400px;
 }
 
 .hero-slider-1 img {
-  max-height: 500px;
+  max-height: 400px;
 }
 
 .hero-slider-1 .single-slider-img-1 {
-  height: 500px;
+  height: 400px;
   position: relative;
 }
 
@@ -5325,9 +5325,9 @@ h6.post-title {
 
 .search-style-1 form input {
   font-size: 15px;
-  height: 48px;
+  height: 45px;
   color: #1a1a1a;
-  border-radius: 26px;
+  border-radius: 10px;
   padding: 3px 50px 3px 20px;
   border: 1px solid #f5f5f5;
   background-color: #f5f5f5;
@@ -5758,7 +5758,7 @@ h6.post-title {
   left: 0;
   -webkit-transition: all .3s ease 0s;
   transition: all .3s ease 0s;
-  border-bottom: 2px solid #F15412;
+  border-bottom: 2px solid #fff;
   background: #fff;
 }
 
@@ -8456,7 +8456,7 @@ span.fi-rs-apps {
 }
 
 /***************************
-    Page section margin 
+    Page section margin
 ****************************/
 .mtb-0 {
   margin: 0;
@@ -9905,7 +9905,7 @@ span.fi-rs-apps {
 }
 
 .search-style-1 form {
-	width: 75%;	
+	width: 75%;
 }
 .header-info-right a{
     padding-left:20px;
@@ -9942,6 +9942,6 @@ span.fi-rs-apps {
 {
 	.mob-app{
 		padding-left:3%;
-	}  
+	}
 }
 
