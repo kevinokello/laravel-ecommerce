@@ -25,7 +25,7 @@
                             <div class="totall-product">
                                 <p>
                                     We found <strong class="text-brand">{{ $products->total() }}</strong> items for
-                                    you!
+                                    you! from {{ $category_name }}
                                 </p>
                             </div>
                             <div class="sort-by-product-area">
