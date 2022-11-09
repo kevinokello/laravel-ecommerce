@@ -20,7 +20,7 @@ Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 Route::get('/cart', CartComponent::class)->name('shop.cart');
 Route::get('/checkout', CheckoutComponent::class)->name('shop.checkout');
 Route::get('/product-category/{slug}', CategoryComponent::class)->name('product.category');
-Route::get('/checkout', SearchComponent::class)->name('shop.checkout');
+Route::get('/search', SearchComponent::class)->name('product.search');
 
 
 // Route::get('/dashboard', function () {

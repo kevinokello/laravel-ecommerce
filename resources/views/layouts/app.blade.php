@@ -369,8 +369,8 @@
                             <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
                                 <nav>
                                     <ul>
-                                        {{-- <li><a class="active" href="{{ route('shop') }}">Shop</a></li>
-                                        <li> --}}
+                                        <li><a href="{{ route('shop') }}">Shop</a></li>
+                                        <li>
                                         @livewire('header-search-component')
                                         </li>
                                         {{-- <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
@@ -387,6 +387,27 @@
                                                 @endif
                                                 @endif
                                             </li> --}}
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
+                                <nav>
+                                    <ul>
+                                        </li>
+                                        <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
+                                            @auth
+                                                @if (Auth::user()->utype === 'ADM')
+                                                    <ul class="sub-menu">
+                                                        <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                                        <li><a href="#">Products</a></li>
+                                                    </ul>
+                                                @else
+                                                    <ul class="sub-menu">
+                                                        <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+                                                    </ul>
+                                                @endif
+                                                @endif
+                                            </li>
                                     </ul>
                                 </nav>
                             </div>
