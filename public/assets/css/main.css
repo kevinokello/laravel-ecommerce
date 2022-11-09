@@ -5310,12 +5310,12 @@ h6.post-title {
 }
 
 .logo.logo-width-1 {
-  margin-right: 123px;
+  margin-right: 20px;
 }
 
 .logo.logo-width-1 a img {
-  width: 120px;
-  min-width: 120px;
+  width: 90px;
+  min-width: 90px;
 }
 
 .search-style-1 form {
@@ -6411,7 +6411,7 @@ h6.post-title {
 
 .header-style-1 .header-top-ptb-1 {
   padding: 13px 0;
-  border-bottom: 3px solid #39b4ac;
+  border-bottom: 1px solid #39b4ac;
   background-color: #d8f4e2;
   background-image: none;
 }
@@ -9895,8 +9895,8 @@ span.fi-rs-apps {
 
 .header-style-1 .header-top-ptb-1 {
 	padding: 13px 0;
-	border-bottom: 1px solid #737975;
-	background-color: #f4f4d8;
+	border-bottom: 1px solid #F15412;
+	background-color: #F4F4F4;
 	background-image: none;
 }
 
