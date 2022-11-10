@@ -11,9 +11,10 @@
                                     class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
                                     <div class="padding_eight_all bg-white">
                                         <div class="heading_s1">
-                           <div class="logo logo-width-1">
-                        <a href="{{ url('/') }}"><img src="assets/imgs/logo/logo.png" alt="logo"></a>
-                    </div>
+                                            <div class="logo logo-width-1">
+                                                <a href="{{ url('/') }}"><img src="assets/imgs/logo/logo.png" style="height:20px;"
+                                                        alt="logo"></a>
+                                            </div>
                                         </div>
                                         @if (\Session::has('message'))
                                             <div class="alert alert-info">
@@ -23,15 +24,15 @@
                                         <form method="post" action="{{ route('login') }}">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="email" name="email"
-                                                    placeholder="Enter Your Email" :value="old('email')" autofocus />
+                                                <input type="email" name="email" placeholder="Enter Your Email"
+                                                    :value="old('email')" autofocus />
                                                 @if ($errors->has('email'))
                                                     <span class="text-danger">{{ $errors->first('email') }}</span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="password"
-                                                    placeholder="Password" autocomplete="current-password" />
+                                                <input type="password" name="password" placeholder="Password"
+                                                    autocomplete="current-password" />
                                                 @if ($errors->has('password'))
                                                     <span class="text-danger">{{ $errors->first('password') }}</span>
                                                 @endif
