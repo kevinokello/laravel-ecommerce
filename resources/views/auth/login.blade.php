@@ -1,4 +1,3 @@
-
 <x-guest-layout>
     <main class="main">
 
@@ -12,18 +11,28 @@
                                     class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
                                     <div class="padding_eight_all bg-white">
                                         <div class="heading_s1">
-                                            <h3 class="mb-30">Login</h3>
+                                            <h4 class="mb-30">Login</h4>
                                         </div>
+                                        @if (\Session::has('message'))
+                                            <div class="alert alert-info">
+                                                {{ \Session::get('message') }}
+                                            </div>
+                                        @endif
                                         <form method="post" action="{{ route('login') }}">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="email" required="" name="email"
-                                                    placeholder="Enter Your Email" :value="old('email')" required
-                                                    autofocus />
+                                                <input type="email" name="email"
+                                                    placeholder="Enter Your Email" :value="old('email')" autofocus />
+                                                @if ($errors->has('email'))
+                                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                                @endif
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password"
-                                                    placeholder="Password" required autocomplete="current-password" />
+                                                <input type="password" name="password"
+                                                    placeholder="Password" autocomplete="current-password" />
+                                                @if ($errors->has('password'))
+                                                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                                                @endif
                                             </div>
                                             <div class="login_footer form-group">
                                                 <div class="chek-form">
@@ -44,9 +53,9 @@
                                                 </button>
                                             </div>
                                         </form>
-                                           <div class="text-muted text-center">
-                        Dont have an account? <a href="{{ route('register') }}">Create one now</a>
-                      </div>
+                                        <div class="text-muted text-center">
+                                            Dont have an account? <a href="{{ route('register') }}">Create one now</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -19,39 +19,48 @@
                         <div class="form-group">
                           <input
                             type="text"
-                            required=""
+
                             name="name"
                             placeholder="Name"
                             :value="old('name')"
-                            required autofocus autocomplete="name"
+                 autofocus autocomplete="name"
                           />
+                            @if ($errors->has('name'))
+                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                                @endif
                         </div>
                         <div class="form-group">
                           <input
                             type="text"
-                            required=""
+
                             name="email"
                             placeholder="Email"
                             :value="old('email')"
-                            required
+
                           />
+                             @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
                         </div>
                         <div class="form-group">
                           <input
-                            required=""
+
                             type="password"
                             name="password"
                             placeholder="Password"
-                            required autocomplete="new-password"
+                 autocomplete="new-password"
                           />
+                                @if ($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                                @endif
                         </div>
                         <div class="form-group">
                           <input
-                            required=""
+
                             type="password"
                             name="password_confirmation"
                             placeholder="Confirm password"
-                             required autocomplete="new-password"
+                     autocomplete="new-password"
                           />
                         </div>
                         <div class="login_footer form-group">
