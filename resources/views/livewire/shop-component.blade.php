@@ -9,14 +9,6 @@
         }
     </style>
     <main class="main">
-        <div class="page-header breadcrumb-wrap">
-            <div class="container">
-                <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
-                    <span></span> Shop
-                </div>
-            </div>
-        </div>
         <section class="mt-50 mb-50">
             <div class="container">
                 <div class="row">

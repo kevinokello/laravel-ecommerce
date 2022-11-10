@@ -1,3 +1,4 @@
+ <br>
  <div class="header-action-icon-2">
      <a class="mini-cart-icon" href="{{ route('shop.cart') }}">
          <img alt="cart" src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }}">
