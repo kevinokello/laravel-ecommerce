@@ -176,7 +176,7 @@
                         </div>
                         <div class="widget-category mb-30">
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">
-                                Category
+                                Filter by Category
                             </h5>
                             <ul class="categories">
                                 @foreach ($categories as $category)
@@ -184,8 +184,6 @@
                                             href="{{ route('product.category', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
                                     </li>
                                 @endforeach
-
-
                             </ul>
                         </div>
 

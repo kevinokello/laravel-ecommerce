@@ -394,7 +394,8 @@
                                 <nav>
                                     <ul>
                                         </li>
-                                        <li><a href="#">My Account<i class="fi-rs-angle-down"></i></a>
+                                        <li><a href="#">                  <img class="svgInject" alt="Surfside Media"
+                                            src="assets/imgs/theme/icons/usr.svg" style="height: 30px;">My Account<i class="fi-rs-angle-down"></i></a>
                                             @auth
                                                 @if (Auth::user()->utype === 'ADM')
                                                     <ul class="sub-menu">
@@ -644,6 +645,7 @@
         <script src="{{ asset('assets/js/main.js?v=3.3') }}"></script>
         <script src="{{ asset('assets/js/shop.js?v=3.3') }}"></script>
         @livewireScripts
+        @stack('scripts')
     </body>
 
     </html>
