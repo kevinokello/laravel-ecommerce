@@ -7,11 +7,13 @@
         nav .hidden {
             display: block;
         }
-        .wishlisted{
-            background-color: #eb4962 !important;
+
+        .wishlisted {
+            background-color: #249e64 !important;
             border: 1px solid transparent !important;
         }
-        .wishlisted i{
+
+        .wishlisted i {
             color: #fff !important;
         }
     </style>
@@ -127,11 +129,14 @@
                                             </div>
                                             <div class="product-action-1 show">
                                                 @if ($witems->contains($product->id))
-                                                    <a aria-label="Add To Wishlist" class="action-btn hover-up wishlisted"
-                                                        href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                                    <a aria-label="Add To Wishlist"
+                                                        class="action-btn hover-up wishlisted" href="wishlist.php"><i
+                                                            class="fi-rs-heart"></i></a>
                                                 @else
                                                     <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                        href="#" wire:click.prevent="addToWishlist({{ $product->id }},'{{ $product->name }}', {{ $product->regular_price }})"><i class="fi-rs-heart"></i></a>
+                                                        href="#"
+                                                        wire:click.prevent="addToWishlist({{ $product->id }},'{{ $product->name }}', {{ $product->regular_price }})"><i
+                                                            class="fi-rs-heart"></i></a>
                                                 @endif
                                                 <a aria-label="Add To Cart" class="action-btn hover-up" href="#"
                                                     wire:click.prevent="store({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i

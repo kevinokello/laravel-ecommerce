@@ -177,23 +177,14 @@
                                 </div>
                             </div>
                             <div class="header-action-right">
-
-                                 @livewire('wishlist-icon-component')
+                                <div class="header-action-2">
+                                    @livewire('wishlist-icon-component')
                                     @livewire('cart-icon-component')
-                                    @auth
-                                    @else
-                                        @endif
-                                        {{-- <div class="header-action-icon-2">
-                                            <a href="{{ route('login') }}">
-                                                <img class="svgInject" alt="Surfside Media"
-                                                    src="assets/imgs/theme/icons/usr.svg">
-                                            </a>
-                                        </div> --}}
-                                    
+                                    </div>
                                 </div>
                             </div>
-                            <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%
-                            </p>
+                            {{-- <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%
+                            </p> --}}
                             <div class="header-action-right d-block d-lg-none">
                                 <div class="header-action-2">
                                     {{-- <div class="header-action-icon-2">
