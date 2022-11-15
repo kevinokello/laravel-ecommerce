@@ -7,6 +7,13 @@
         nav .hidden {
             display: block;
         }
+        .wishlisted{
+            background-color: #eb4962 !important;
+            border: 1px solid transparent !important;
+        }
+        .wishlisted i{
+            color: #fff !important;
+        }
     </style>
     <main class="main">
         <section class="mt-50 mb-50">
@@ -55,16 +62,33 @@
                                     </div>
                                     <div class="sort-by-dropdown">
                                         <ul>
-                                            <li><a href="#" class="{{ $orderBy == 'Default Sorting' ? 'active' : '' }}" wire:click.prevent="changeOrderBy('Default Sorting')">Default Sorting</a></li>
-                                            <li><a href="#" class="{{ $orderBy == 'Price: Low to High' ? 'active' : '' }}" wire:click.prevent="changeOrderBy('Price: Low to High')">Price: Low to High</a></li>
-                                            <li><a href="#" class="{{ $orderBy == 'Price: High to Low' ? 'active' : '' }}" wire:click.prevent="changeOrderBy('Price: High to Low')">Price: High to Low</a></li>
-                                            <li><a href="#" class="{{ $orderBy == 'Sort by Latest' ? 'active' : '' }}" wire:click.prevent="changeOrderBy('Sort by Latest')">Sort by Latest</a></li>
+                                            <li><a href="#"
+                                                    class="{{ $orderBy == 'Default Sorting' ? 'active' : '' }}"
+                                                    wire:click.prevent="changeOrderBy('Default Sorting')">Default
+                                                    Sorting</a></li>
+                                            <li><a href="#"
+                                                    class="{{ $orderBy == 'Price: Low to High' ? 'active' : '' }}"
+                                                    wire:click.prevent="changeOrderBy('Price: Low to High')">Price: Low
+                                                    to High</a></li>
+                                            <li><a href="#"
+                                                    class="{{ $orderBy == 'Price: High to Low' ? 'active' : '' }}"
+                                                    wire:click.prevent="changeOrderBy('Price: High to Low')">Price: High
+                                                    to Low</a></li>
+                                            <li><a href="#"
+                                                    class="{{ $orderBy == 'Sort by Latest' ? 'active' : '' }}"
+                                                    wire:click.prevent="changeOrderBy('Sort by Latest')">Sort by
+                                                    Latest</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row product-grid-3">
+                            @php
+                                $witems = Cart::instance('wishlist')
+                                    ->content()
+                                    ->pluck('id');
+                            @endphp
                             @foreach ($products as $product)
                                 <div class="col-lg-4 col-md-4 col-6 col-sm-6">
                                     <div class="product-cart-wrap mb-30">
@@ -79,15 +103,7 @@
                                                         alt="{{ $product->name }}" />
                                                 </a>
                                             </div>
-                                            <div class="product-action-1">
-                                                <a aria-label="Quick view" class="action-btn hover-up"
-                                                    data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                                                    <i class="fi-rs-search"></i></a>
-                                                <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                    href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="Compare" class="action-btn hover-up"
-                                                    href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                            </div>
+
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="hot">Hot</span>
                                             </div>
@@ -110,9 +126,16 @@
                                                 {{-- <span class="old-price">$245.8</span> --}}
                                             </div>
                                             <div class="product-action-1 show">
+                                                @if ($witems->contains($product->id))
+                                                    <a aria-label="Add To Wishlist" class="action-btn hover-up wishlisted"
+                                                        href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                                @else
+                                                    <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                        href="#" wire:click.prevent="addToWishlist({{ $product->id }},'{{ $product->name }}', {{ $product->regular_price }})"><i class="fi-rs-heart"></i></a>
+                                                @endif
                                                 <a aria-label="Add To Cart" class="action-btn hover-up" href="#"
                                                     wire:click.prevent="store({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})"><i
-                                                class="fi-rs-shopping-bag-add"></i></a>
+                                                        class="fi-rs-shopping-bag-add"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -156,11 +179,13 @@
                         </div>
                         <div class="widget-category mb-30">
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">
-                               Filter by Category
+                                Filter by Category
                             </h5>
                             <ul class="categories">
                                 @foreach ($categories as $category)
-                              <li><a href="{{ route('product.category',['slug'=>$category->slug]) }}">{{ $category->name }}</a></li>
+                                    <li><a
+                                            href="{{ route('product.category', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
+                                    </li>
                                 @endforeach
 
 
@@ -177,7 +202,8 @@
                                     <div id="slider-range" wire:ignore></div>
                                     <div class="price_slider_amount">
                                         <div class="label-input">
-                                            <span>Range:</span><span class="text-info">KSH {{ $min_value }}</span> - <span class="text-info">KSH {{ $max_value }}</span>
+                                            <span>Range:</span><span class="text-info">KSH {{ $min_value }}</span>
+                                            - <span class="text-info">KSH {{ $max_value }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -284,23 +310,23 @@
     </main>
 </div>
 @push('scripts')
-<script>
+    <script>
         var sliderrange = $('#slider-range');
-    var amountprice = $('#amount');
-    $(function() {
-        sliderrange.slider({
-            range: true,
-            min: 0,
-            max: 1000,
-            values: [0, 1000],
-            slide: function(event, ui) {
+        var amountprice = $('#amount');
+        $(function() {
+            sliderrange.slider({
+                range: true,
+                min: 0,
+                max: 1000,
+                values: [0, 1000],
+                slide: function(event, ui) {
 
-                //amountprice.val("$" + ui.values[0] + " - $" + ui.values[1]);
-                @this.set('min_value',ui.values[0]);
-                 @this.set('max_value',ui.values[1]);
-            }
+                    //amountprice.val("$" + ui.values[0] + " - $" + ui.values[1]);
+                    @this.set('min_value', ui.values[0]);
+                    @this.set('max_value', ui.values[1]);
+                }
+            });
+
         });
-
-    });
-</script>
+    </script>
 @endpush

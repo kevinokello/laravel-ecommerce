@@ -76,85 +76,10 @@
                             <div class="main-categori-wrap d-none d-lg-block">
 
                                 <a class="categori-button-active" href="#">
-                                    <span class="fi-rs-apps"></span> Browse Categories<i class="fi-rs-angle-down"></i>
+                                    <span class="fi-rs-apps"></span> Browse<i class="fi-rs-angle-down"></i>
                                 </a>
                                 <div class="categori-dropdown-wrap categori-dropdown-active-large">
                                     <ul>
-                                        <li class="has-children">
-                                            <a href="shop.html"><i class="surfsidemedia-font-dress"></i>Women's
-                                                Clothing</a>
-                                            <div class="dropdown-menu">
-                                                <ul class="mega-menu d-lg-flex">
-                                                    <li class="mega-menu-col col-lg-7">
-                                                        <ul class="d-lg-flex">
-                                                            <li class="mega-menu-col col-lg-6">
-                                                                <ul>
-                                                                    <li><span class="submenu-title">Hot & Trending</span>
-                                                                    </li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Dresses</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Blouses & Shirts</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Hoodies & Sweatshirts</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Women's Sets</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Suits & Blazers</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Bodysuits</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Tanks & Camis</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Coats & Jackets</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="mega-menu-col col-lg-6">
-                                                                <ul>
-                                                                    <li><span class="submenu-title">Bottoms</span></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Leggings</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Skirts</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Shorts</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Jeans</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Pants & Capris</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Bikini Sets</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Cover-Ups</a></li>
-                                                                    <li><a class="dropdown-item nav-link nav_item"
-                                                                            href="#">Swimwear</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="mega-menu-col col-lg-5">
-                                                        <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-2.jpg"
-                                                                alt="menu_banner1">
-                                                            <div class="banne_info">
-                                                                <h6>10% Off</h6>
-                                                                <h4>New Arrival</h4>
-                                                                <a href="#">Shop now</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="header-banner2">
-                                                            <img src="assets/imgs/banner/menu-banner-3.jpg"
-                                                                alt="menu_banner2">
-                                                            <div class="banne_info">
-                                                                <h6>15% Off</h6>
-                                                                <h4>Hot Deals</h4>
-                                                                <a href="#">Shop now</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
 
                                         <li><a href="shop.html"><i class="surfsidemedia-font-desktop"></i>Computer &
                                                 Office</a></li>
@@ -252,8 +177,8 @@
                                 </div>
                             </div>
                             <div class="header-action-right">
-                                <div class="header-action-2">
 
+                                 @livewire('wishlist-icon-component')
                                     @livewire('cart-icon-component')
                                     @auth
                                     @else
@@ -264,7 +189,7 @@
                                                     src="assets/imgs/theme/icons/usr.svg">
                                             </a>
                                         </div> --}}
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%
@@ -307,7 +232,7 @@
                             <div class="mobile-menu-wrap mobile-header-border">
                                 <div class="main-categori-wrap mobile-header-border">
                                     <a class="categori-button-active-2" href="#">
-                                        <span class="fi-rs-apps"></span> Browse Categories<i class="fi-rs-angle-down"></i>
+                                        <span class="fi-rs-apps"></span> Browse<i class="fi-rs-angle-down"></i>
                                     </a>
                                     <div class="categori-dropdown-wrap categori-dropdown-active-small">
                                         <ul>

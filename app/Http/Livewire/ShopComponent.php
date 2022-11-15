@@ -19,13 +19,18 @@ class ShopComponent extends Component
 
     public function store($product_id, $product_name, $product_price)
     {
-        Cart::add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
+        Cart::instance('cart')->add($product_id, $product_name, 1, $product_price)->associate('\App\Models\Product');
         session()->flash('success_message', 'Item added to cart');
         return redirect()->route('shop.cart');
     }
     public function changePageSize($size)
     {
         $this->pageSize = $size;
+    }
+    public function addToWishList($product_id, $product_name, $product_price)
+    {
+        Cart::instance('wishlist')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+        $this->emitTo('wishlist-icon-component', 'refreshCoponent');
     }
     public function changeOrderBy($order)
     {
@@ -34,15 +39,15 @@ class ShopComponent extends Component
     public function render()
     {
         if ($this->orderBy == 'Price: Low to High') {
-            $products = Product::whereBetween('regular_price',[$this->min_value,$this->max_value])->orderBy('regular_price', 'ASC')->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price', [$this->min_value, $this->max_value])->orderBy('regular_price', 'ASC')->paginate($this->pageSize);
         } else if ($this->orderBy == 'Price: High to Low') {
-            $products = Product::whereBetween('regular_price',[$this->min_value,$this->max_value])->orderBy('regular_price', 'DESC')->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price', [$this->min_value, $this->max_value])->orderBy('regular_price', 'DESC')->paginate($this->pageSize);
         } else if ($this->orderBy == 'Sort by Latest') {
-            $products = Product::whereBetween('regular_price',[$this->min_value,$this->max_value])->orderBy('created_at', 'DESC')->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price', [$this->min_value, $this->max_value])->orderBy('created_at', 'DESC')->paginate($this->pageSize);
         } else {
-            $products = Product::whereBetween('regular_price',[$this->min_value,$this->max_value])->paginate($this->pageSize);
+            $products = Product::whereBetween('regular_price', [$this->min_value, $this->max_value])->paginate($this->pageSize);
         }
-        $categories = Category::orderBy('name','ASC')->get();
-        return view('livewire.shop-component', ['products' => $products,'categories' => $categories]);
+        $categories = Category::orderBy('name', 'ASC')->get();
+        return view('livewire.shop-component', ['products' => $products, 'categories' => $categories]);
     }
 }
