@@ -148,7 +148,7 @@
                                                         <li><a href="#">Wishlist</a></li>
                                                     @else
                                                         <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
-                                                        <li><a href="{{ url('/') }}">My orders</a></li>
+                                                        {{-- <li><a href="{{ url('/') }}">My orders</a></li> --}}
                                                         <li><a href="#">Wishlist</a></li>
                                                         <li>
 
@@ -166,7 +166,7 @@
                                                 @else
                                                     <a class="btn" href="{{ route('login') }}"><i
                                                             class="fi-rs-user mr-10"></i>Log in</a>
-                                                    <li><a href="{{ url('/') }}">My orders</a></li>
+                                                    {{-- <li><a href="{{ url('/') }}">My orders</a></li> --}}
                                                     <li><a href="#">Wishlist</a></li>
                                                     @endif
                                                 </ul>

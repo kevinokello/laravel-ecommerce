@@ -11,10 +11,14 @@
              @foreach (Cart::instance('cart')->content() as $item)
                  <li>
                      <div class="shopping-cart-img">
-                         <a href="{{ route('product.details',['slug'=>$item->model->slug]) }}"><img alt="{{ $item->model->name }}"  src="{{ asset('assets/imgs/shop/product-')}}{{ $item->model->id }}-1.jpg"></a>
+                         <a href="{{ route('product.details', ['slug' => $item->model->slug]) }}"><img
+                                 alt="{{ $item->model->name }}"
+                                 src="{{ asset('assets/imgs/shop/product-') }}{{ $item->model->id }}-1.jpg"></a>
                      </div>
                      <div class="shopping-cart-title">
-                         <h4><a href="{{ route('product.details',['slug'=>$item->model->slug]) }}">{{ substr($item->model->name,0,20) }}...</a></h4>
+                         <h4><a
+                                 href="{{ route('product.details', ['slug' => $item->model->slug]) }}">{{ substr($item->model->name, 0, 20) }}...</a>
+                         </h4>
                          <h4><span>{{ $item->qty }} × </span>KSH {{ $item->model->regular_price }}</h4>
                      </div>
                      {{-- <div class="shopping-cart-delete">
@@ -22,8 +26,6 @@
                      </div> --}}
                  </li>
              @endforeach
-
-
          </ul>
          <div class="shopping-cart-footer">
              <div class="shopping-cart-total">
@@ -31,7 +33,7 @@
              </div>
              <div class="shopping-cart-button">
                  <a href="{{ route('shop.cart') }}" class="outline">View cart</a>
-                 <a href="checkout.html">Checkout</a>
+                 <a href="#">Checkout</a>
              </div>
          </div>
      </div>

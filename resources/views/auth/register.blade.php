@@ -8,12 +8,12 @@
                             <div class="col-lg-6">
                                 <div class="login_wrap widget-taber-content p-30 background-white border-radius-5">
                                     <div class="padding_eight_all bg-white">
-                                        <div class="heading_s1">
+                                        {{-- <div class="heading_s1">
                                             <div class="logo logo-width-1">
                                                 <a href="{{ url('/') }}"><img src="assets/imgs/logo/logo.png"
                                                         alt="logo"></a>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <form method="post" action="{{ route('register') }}">
                                             @csrf
                                             <div class="form-group">

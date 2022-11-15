@@ -5523,7 +5523,7 @@ h6.post-title {
     font-size: 15px;
     height: 45px;
     color: #1a1a1a;
-    border-radius: 10px;
+    border-radius: 7px;
     padding: 3px 50px 3px 20px;
     border: px solid #f5f5f5;
     background-color: #f5f5f5;
@@ -5718,7 +5718,7 @@ h6.post-title {
 }
 
 .search-style-1 form button:hover {
-    color: #3f81eb;
+    color: #000000;
 }
 
 .header-action {

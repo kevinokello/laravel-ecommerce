@@ -11,10 +11,10 @@
                                     class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
                                     <div class="padding_eight_all bg-white">
                                         <div class="heading_s1">
-                                            <div class="logo logo-width-1">
+                                            {{-- <div class="logo logo-width-1">
                                                 <a href="{{ url('/') }}"><img src="assets/imgs/logo/logo.png" style="height:20px;"
                                                         alt="logo"></a>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         @if (\Session::has('message'))
                                             <div class="alert alert-info">
